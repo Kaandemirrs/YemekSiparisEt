@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activty_nav"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.yemeksipariset.ui.fragment.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/anadandetayagecis"
+            app:destination="@id/detaySayfaFragment" />
+        <action
+            android:id="@+id/anadanfavagecis"
+            app:destination="@id/favoriSayfaFragment" />
+        <action
+            android:id="@+id/anadansiparislerimegecis"
+            app:destination="@id/siparisimFragment" />
+        <action
+            android:id="@+id/anadansepetegecis"
+            app:destination="@id/sepetSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detaySayfaFragment"
+        android:name="com.example.yemeksipariset.ui.fragment.DetaySayfaFragment"
+        android:label="fragment_detay_sayfa"
+        tools:layout="@layout/fragment_detay_sayfa" >
+        <action
+            android:id="@+id/detaydansepetegecis"
+            app:destination="@id/sepetSayfaFragment" />
+        <argument
+            android:name="tumyemek"
+            app:argType="com.example.yemeksipariset.data.entity.Yemekler" />
+        <action
+            android:id="@+id/action_detaySayfaFragment_to_anaSayfaFragment"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriSayfaFragment"
+        android:name="com.example.yemeksipariset.ui.fragment.FavoriSayfaFragment"
+        android:label="fragment_favori_sayfa"
+        tools:layout="@layout/fragment_favori_sayfa" >
+        <action
+            android:id="@+id/action_favoriSayfaFragment_to_anaSayfaFragment"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetSayfaFragment"
+        android:name="com.example.yemeksipariset.ui.fragment.SepetSayfaFragment"
+        android:label="fragment_sepet_sayfa"
+        tools:layout="@layout/fragment_sepet_sayfa" >
+        <action
+            android:id="@+id/sepetdensiparisegcis"
+            app:destination="@id/siparisimFragment" />
+        <action
+            android:id="@+id/action_sepetSayfaFragment_to_anaSayfaFragment"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/siparisimFragment"
+        android:name="com.example.yemeksipariset.ui.fragment.SiparisimFragment"
+        android:label="fragment_siparisim"
+        tools:layout="@layout/fragment_siparisim" >
+        <action
+            android:id="@+id/action_siparisimFragment_to_anaSayfaFragment"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+</navigation>

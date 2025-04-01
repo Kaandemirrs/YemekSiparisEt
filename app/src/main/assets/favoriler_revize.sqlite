@@ -1,0 +1,8 @@
+
+CREATE TABLE IF NOT EXISTS favoriler (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    yemek_id INTEGER NOT NULL,
+    yemek_adi TEXT NOT NULL,
+    yemek_resim_adi TEXT NOT NULL,
+    yemek_fiyat INTEGER NOT NULL
+);

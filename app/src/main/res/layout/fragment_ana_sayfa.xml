@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+      <variable
+          name="AnaSayfaAdapter"
+          type="com.example.yemeksipariset.ui.adapter.AnaSayfaAdapter" />
+        <variable
+            name="anaSayfaViewModel"
+            type="com.example.yemeksipariset.ui.viewmodel.AnaSayfaViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.AnaSayfaFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarAnaUst"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewAna"
+            android:layout_width="343dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/rvAna"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarAnaUst" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarAnaAlt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvAna" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAna"
+            android:layout_width="409dp"
+            android:layout_height="686dp"
+            android:layout_marginTop="8dp"
+            android:adapter="@{AnaSayfaAdapter}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/toolbarAnaAlt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchViewAna"
+            app:spanCount="3" />
+
+        <ImageView
+            android:id="@+id/imageViewAnaHome"
+            android:layout_width="51dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="11dp"
+            app:layout_constraintStart_toStartOf="@+id/toolbarAnaAlt"
+            app:layout_constraintTop_toTopOf="@+id/toolbarAnaAlt"
+            app:srcCompat="@drawable/anasayfayeni" />
+
+        <ImageView
+            android:id="@+id/imageViewAnaFav"
+            android:layout_width="59dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="9dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAnaHome"
+            app:layout_constraintTop_toTopOf="@+id/toolbarAnaAlt"
+            app:srcCompat="@drawable/fav" />
+
+        <ImageView
+            android:id="@+id/imageViewAnaSiparis"
+            android:layout_width="53dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAnaFav"
+            app:layout_constraintTop_toTopOf="@+id/toolbarAnaAlt"
+            app:srcCompat="@drawable/listesiyahyeni" />
+
+        <ImageView
+            android:id="@+id/imageViewAnaSepet"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="13dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAnaSiparis"
+            app:layout_constraintTop_toTopOf="@+id/toolbarAnaAlt"
+            app:srcCompat="@drawable/sepetyeni" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
